@@ -3,13 +3,16 @@
  */
 package org.example
 
-class App {
-    val greeting: String
+class persona (private val name: String) {
+    val saludo: String
         get() {
-            return "Hello World!"
+            return "Hola $name !"
         }
 }
 
 fun main() {
-    println(App().greeting)
+    println("Cual es tu nombre?: ")
+    val nombre = readLine() ?: "desconocido"
+    val a = persona(nombre)
+    println(a.saludo)
 }
