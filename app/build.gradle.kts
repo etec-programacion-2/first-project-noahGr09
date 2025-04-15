@@ -8,7 +8,7 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     alias(libs.plugins.kotlin.jvm)
-
+    kotlin("jvm") version "1.9.0"
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -17,6 +17,7 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+val javafxVersion = "24"
 
 dependencies {
     // Use the Kotlin JUnit 5 integration.
@@ -29,6 +30,9 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    implementation("org.openjfx:javafx-controls:$javafxVersion")
+    implementation("org.openjfx:javafx-fxml:$javafxVersion")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
